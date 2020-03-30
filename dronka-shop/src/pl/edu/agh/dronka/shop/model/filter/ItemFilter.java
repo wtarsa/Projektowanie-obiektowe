@@ -29,6 +29,23 @@ public class ItemFilter {
 			return false;
 		}
 
+		//
+		if (itemSpec.isMobile() && !item.isMobile()) {
+			return false;
+		}
+
+		if (itemSpec.hasWarranty() && !item.hasWarranty()) {
+			return false;
+		}
+
+		if (itemSpec.isVideoIncluded() && !item.isVideoIncluded()) {
+			return false;
+		}
+
+		if (itemSpec.hasHardcover() && !item.hasHardcover()) {
+			return false;
+		}
+
 		return true;
 	}
 
