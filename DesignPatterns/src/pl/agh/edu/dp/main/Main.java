@@ -11,8 +11,10 @@ public class Main {
 
     public static void main(String[] args) {
 
-        MazeFactory mz1 = new MazeFactory();
-        MazeFactory mz2 = new MazeFactory();
+        MazeFactory mz1 = MazeFactory.getInstance();
+        MazeFactory mz2 = MazeFactory.getInstance();
+       // MazeFactory mz1 = new MazeFactory();
+       // MazeFactory mz2 = new MazeFactory();
         System.out.println(mz2.equals(mz1));
 
         //BombedMazeFactory

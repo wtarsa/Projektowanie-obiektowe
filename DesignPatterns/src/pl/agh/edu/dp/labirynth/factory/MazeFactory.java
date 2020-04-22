@@ -4,6 +4,15 @@ import pl.agh.edu.dp.labirynth.*;
 
 public class MazeFactory {
 
+    private static MazeFactory instance;
+
+    public static MazeFactory getInstance(){
+        if(instance == null){
+            MazeFactory.instance = new MazeFactory();
+        }
+        return instance;
+    }
+
     public Room createRoom(int number) {
         return new Room(number);
     }
