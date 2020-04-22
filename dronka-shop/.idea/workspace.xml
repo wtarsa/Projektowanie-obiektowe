@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d7fcc525-872d-415f-beb1-240f6f47d712" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/food.csv" beforeDir="false" afterPath="$PROJECT_DIR$/bin/food.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/music.csv" beforeDir="false" afterPath="$PROJECT_DIR$/bin/music.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/pl/edu/agh/dronka/shop/model/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/pl/edu/agh/dronka/shop/model/Item.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/pl/edu/agh/dronka/shop/model/provider/ShopProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/pl/edu/agh/dronka/shop/model/provider/ShopProvider.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/pl/edu/agh/dronka/shop/model/util/PropertiesHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/pl/edu/agh/dronka/shop/model/util/PropertiesHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/food.csv" beforeDir="false" afterPath="$PROJECT_DIR$/resources/food.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/music.csv" beforeDir="false" afterPath="$PROJECT_DIR$/resources/music.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pl/edu/agh/dronka/shop/model/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/edu/agh/dronka/shop/model/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pl/edu/agh/dronka/shop/model/filter/ItemFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/edu/agh/dronka/shop/model/filter/ItemFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pl/edu/agh/dronka/shop/model/provider/ShopProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/edu/agh/dronka/shop/model/provider/ShopProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pl/edu/agh/dronka/shop/model/util/PropertiesHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/edu/agh/dronka/shop/model/util/PropertiesHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pl/edu/agh/dronka/shop/view/PropertiesPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/edu/agh/dronka/shop/view/PropertiesPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +72,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1585561024018</updated>
-      <workItem from="1585561027785" duration="15588000" />
+      <workItem from="1585561027785" duration="15630000" />
+      <workItem from="1585742068708" duration="2932000" />
+      <workItem from="1586164943405" duration="718000" />
     </task>
     <servers />
   </component>
@@ -97,25 +86,29 @@
       <screen x="51" y="27" width="1869" height="1053" />
     </state>
     <state x="443" y="210" key="#com.intellij.execution.impl.EditConfigurationsDialog/51.27.1869.1053@51.27.1869.1053" timestamp="1585561066001" />
-    <state width="1823" height="2" key="GridCell.Tab.0.bottom" timestamp="1585578104742">
+    <state width="1823" height="2" key="GridCell.Tab.0.bottom" timestamp="1585600748736">
       <screen x="51" y="27" width="1869" height="1053" />
     </state>
-    <state width="1823" height="2" key="GridCell.Tab.0.bottom/51.27.1869.1053@51.27.1869.1053" timestamp="1585578104742" />
-    <state width="1823" height="2" key="GridCell.Tab.0.center" timestamp="1585578104742">
+    <state width="1823" height="2" key="GridCell.Tab.0.bottom/51.27.1869.1053@51.27.1869.1053" timestamp="1585600748736" />
+    <state width="1823" height="2" key="GridCell.Tab.0.center" timestamp="1585600748735">
       <screen x="51" y="27" width="1869" height="1053" />
     </state>
-    <state width="1823" height="2" key="GridCell.Tab.0.center/51.27.1869.1053@51.27.1869.1053" timestamp="1585578104742" />
-    <state width="1823" height="2" key="GridCell.Tab.0.left" timestamp="1585578104741">
+    <state width="1823" height="2" key="GridCell.Tab.0.center/51.27.1869.1053@51.27.1869.1053" timestamp="1585600748735" />
+    <state width="1823" height="2" key="GridCell.Tab.0.left" timestamp="1585600748734">
       <screen x="51" y="27" width="1869" height="1053" />
     </state>
-    <state width="1823" height="2" key="GridCell.Tab.0.left/51.27.1869.1053@51.27.1869.1053" timestamp="1585578104741" />
-    <state width="1823" height="2" key="GridCell.Tab.0.right" timestamp="1585578104742">
+    <state width="1823" height="2" key="GridCell.Tab.0.left/51.27.1869.1053@51.27.1869.1053" timestamp="1585600748734" />
+    <state width="1823" height="2" key="GridCell.Tab.0.right" timestamp="1585600748736">
       <screen x="51" y="27" width="1869" height="1053" />
     </state>
-    <state width="1823" height="2" key="GridCell.Tab.0.right/51.27.1869.1053@51.27.1869.1053" timestamp="1585578104742" />
+    <state width="1823" height="2" key="GridCell.Tab.0.right/51.27.1869.1053@51.27.1869.1053" timestamp="1585600748736" />
     <state x="468" y="130" width="1024" height="845" key="SettingsEditor" timestamp="1585561081113">
       <screen x="51" y="27" width="1869" height="1053" />
     </state>
     <state x="468" y="130" width="1024" height="845" key="SettingsEditor/51.27.1869.1053@51.27.1869.1053" timestamp="1585561081113" />
+    <state x="641" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1586164945195">
+      <screen x="51" y="27" width="1869" height="1053" />
+    </state>
+    <state x="641" y="380" key="com.intellij.ide.util.TipDialog/51.27.1869.1053@51.27.1869.1053" timestamp="1586164945195" />
   </component>
 </project>
