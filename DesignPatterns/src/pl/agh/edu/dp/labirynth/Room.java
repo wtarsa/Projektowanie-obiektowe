@@ -6,9 +6,10 @@ public class Room extends MapSite
 {
     private int roomNumber;
     private Map<Direction, MapSite> sides;
-
+    public boolean end;
 
     public Room(int number){
+        this.end = false;
         this.sides = new EnumMap<>(Direction.class);
         this.roomNumber = number;
     }

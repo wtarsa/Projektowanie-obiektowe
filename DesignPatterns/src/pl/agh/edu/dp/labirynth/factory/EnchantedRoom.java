@@ -5,7 +5,7 @@ import pl.agh.edu.dp.labirynth.Room;
 public class EnchantedRoom extends Room {
     public EnchantedRoom(int number) {
         super(number);
-        System.out.println("Utworzono magiczny pokój");
+       // System.out.println("Utworzono magiczny pokój");
     }
 
     @Override

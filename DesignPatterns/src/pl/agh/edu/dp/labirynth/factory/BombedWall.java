@@ -4,7 +4,7 @@ import pl.agh.edu.dp.labirynth.Wall;
 
 public class BombedWall extends Wall {
     public BombedWall(){
-        System.out.println("Utworzono bombową ścianę.");
+        //System.out.println("Utworzono bombową ścianę.");
     }
 
     @Override

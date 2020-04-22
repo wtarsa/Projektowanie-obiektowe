@@ -5,7 +5,7 @@ import pl.agh.edu.dp.labirynth.Room;
 public class BombedRoom extends Room {
     public BombedRoom(int number) {
         super(number);
-        System.out.println("Utworzono bombowy pokój.");
+       // System.out.println("Utworzono bombowy pokój.");
     }
 
     @Override

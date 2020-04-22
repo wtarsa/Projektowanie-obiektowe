@@ -11,11 +11,21 @@ public class Main {
 
     public static void main(String[] args) {
 
+        //gameplay
+        MazeGame mazeGame = new MazeGame();
+        MazeFactory mazeFactory = new MazeFactory();
+        Maze maze = mazeGame.createExampleGameplay1(mazeFactory);
+        Player player = new Player();
+        player.playGame(maze);
+
+        //singleton
+        /*
         MazeFactory mz1 = MazeFactory.getInstance();
         MazeFactory mz2 = MazeFactory.getInstance();
        // MazeFactory mz1 = new MazeFactory();
        // MazeFactory mz2 = new MazeFactory();
         System.out.println(mz2.equals(mz1));
+    */
 
         //BombedMazeFactory
         /*
