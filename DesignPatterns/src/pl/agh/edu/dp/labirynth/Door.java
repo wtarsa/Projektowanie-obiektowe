@@ -12,6 +12,7 @@ public class Door extends MapSite {
 
     @Override
     public void Enter(){
+        System.out.println("Normalne drzwi");
 
     }
 

@@ -2,7 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="339f23db-f076-44ff-af00-48ac7335532a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../dronka-shop/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../dronka-shop/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pl/agh/edu/dp/labirynth/factory/EnchantedDoor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pl/agh/edu/dp/labirynth/factory/EnchantedRoom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DesignPatterns/pl/agh/edu/dp/labirynth/Door.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DesignPatterns/pl/agh/edu/dp/labirynth/Door.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DesignPatterns/pl/agh/edu/dp/labirynth/MazeGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DesignPatterns/pl/agh/edu/dp/labirynth/MazeGame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DesignPatterns/pl/agh/edu/dp/labirynth/Room.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DesignPatterns/pl/agh/edu/dp/labirynth/Room.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DesignPatterns/pl/agh/edu/dp/labirynth/Wall.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DesignPatterns/pl/agh/edu/dp/labirynth/Wall.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DesignPatterns/pl/agh/edu/dp/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DesignPatterns/pl/agh/edu/dp/main/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pl/agh/edu/dp/labirynth/Door.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/agh/edu/dp/labirynth/Door.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pl/agh/edu/dp/labirynth/MazeGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/agh/edu/dp/labirynth/MazeGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pl/agh/edu/dp/labirynth/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/agh/edu/dp/labirynth/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pl/agh/edu/dp/labirynth/Wall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/agh/edu/dp/labirynth/Wall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pl/agh/edu/dp/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/agh/edu/dp/main/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +86,7 @@
       <workItem from="1587127010404" duration="3999000" />
       <workItem from="1587484943734" duration="7954000" />
       <workItem from="1587541257408" duration="4201000" />
-      <workItem from="1587551878575" duration="2914000" />
+      <workItem from="1587551878575" duration="10765000" />
     </task>
     <servers />
   </component>
@@ -90,39 +102,39 @@
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="734" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1586280393504" />
-    <state x="2688" y="241" width="374" height="585" key="#com.intellij.ide.util.MemberChooser" timestamp="1587552701625">
+    <state x="2688" y="241" width="374" height="585" key="#com.intellij.ide.util.MemberChooser" timestamp="1587560676549">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="768" y="274" width="378" height="575" key="#com.intellij.ide.util.MemberChooser/0.42.1920.1038@0.42.1920.1038" timestamp="1586268822254" />
-    <state x="2688" y="241" width="374" height="585" key="#com.intellij.ide.util.MemberChooser/51.27.1869.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587552701625" />
+    <state x="2688" y="241" width="374" height="585" key="#com.intellij.ide.util.MemberChooser/51.27.1869.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587560676549" />
     <state x="743" y="320" width="428" height="484" key="FileChooserDialogImpl" timestamp="1586268575810">
       <screen x="0" y="42" width="1920" height="1038" />
     </state>
     <state x="743" y="320" width="428" height="484" key="FileChooserDialogImpl/0.42.1920.1038@0.42.1920.1038" timestamp="1586268575810" />
-    <state width="1874" height="296" key="GridCell.Tab.0.bottom" timestamp="1587553729672">
+    <state width="1874" height="296" key="GridCell.Tab.0.bottom" timestamp="1587564522116">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state width="670" height="266" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1586280451425" />
     <state width="1874" height="273" key="GridCell.Tab.0.bottom/0.42.1920.1038@0.42.1920.1038" timestamp="1586274135133" />
-    <state width="1874" height="296" key="GridCell.Tab.0.bottom/51.27.1869.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587553729672" />
-    <state width="1874" height="296" key="GridCell.Tab.0.center" timestamp="1587553729671">
+    <state width="1874" height="296" key="GridCell.Tab.0.bottom/51.27.1869.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587564522116" />
+    <state width="1874" height="296" key="GridCell.Tab.0.center" timestamp="1587564522115">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state width="670" height="266" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1586280451425" />
     <state width="1874" height="273" key="GridCell.Tab.0.center/0.42.1920.1038@0.42.1920.1038" timestamp="1586274135131" />
-    <state width="1874" height="296" key="GridCell.Tab.0.center/51.27.1869.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587553729671" />
-    <state width="1874" height="296" key="GridCell.Tab.0.left" timestamp="1587553729671">
+    <state width="1874" height="296" key="GridCell.Tab.0.center/51.27.1869.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587564522115" />
+    <state width="1874" height="296" key="GridCell.Tab.0.left" timestamp="1587564522115">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state width="670" height="266" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1586280451425" />
     <state width="1874" height="273" key="GridCell.Tab.0.left/0.42.1920.1038@0.42.1920.1038" timestamp="1586274135129" />
-    <state width="1874" height="296" key="GridCell.Tab.0.left/51.27.1869.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587553729671" />
-    <state width="1874" height="296" key="GridCell.Tab.0.right" timestamp="1587553729672">
+    <state width="1874" height="296" key="GridCell.Tab.0.left/51.27.1869.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587564522115" />
+    <state width="1874" height="296" key="GridCell.Tab.0.right" timestamp="1587564522115">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state width="670" height="266" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1586280451425" />
     <state width="1874" height="273" key="GridCell.Tab.0.right/0.42.1920.1038@0.42.1920.1038" timestamp="1586274135132" />
-    <state width="1874" height="296" key="GridCell.Tab.0.right/51.27.1869.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587553729672" />
+    <state width="1874" height="296" key="GridCell.Tab.0.right/51.27.1869.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587564522115" />
     <state width="1874" height="354" key="GridCell.Tab.1.bottom" timestamp="1587552409685">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>

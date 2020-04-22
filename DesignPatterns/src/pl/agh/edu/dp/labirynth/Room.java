@@ -40,6 +40,6 @@ public class Room extends MapSite
 
     @Override
     public void Enter(){
-
+        System.out.println("Normalny pokój");
     }
 }
