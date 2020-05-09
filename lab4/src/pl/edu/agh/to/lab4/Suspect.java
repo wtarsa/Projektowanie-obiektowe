@@ -4,4 +4,5 @@ public interface Suspect {
     public String getName();
     public String getSurname();
     public String display();
+    public int getAge();
 }

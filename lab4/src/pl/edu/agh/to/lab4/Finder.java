@@ -8,10 +8,22 @@ import java.util.Map;
 public class Finder {
     private CompositeAggregate compositeAggregate;
 
-    public Finder(PrisonersDatabase prisonersDatabase, PersonDataProvider personDataProvider) {
+    public Finder() {
         this.compositeAggregate = new CompositeAggregate();
-        this.compositeAggregate.addChild(prisonersDatabase);
-        this.compositeAggregate.addChild(personDataProvider);
+    }
+
+    public void addDataProvider(SuspectAggregate suspectAggregate){
+        this.compositeAggregate.addChild(suspectAggregate);
+    }
+
+    public Collection<Suspect> display(CompositeSearchStrategy strategy){
+        ArrayList<Suspect> suspects = new ArrayList<>();
+        Iterator<Suspect> suspectIterator = this.compositeAggregate.iterator();
+        while(suspectIterator.hasNext()){
+            Suspect suspect = suspectIterator.next();
+            if(strategy.filter(suspect)) suspects.add(suspect);
+        }
+        return suspects;
     }
 
     public void displayAllSuspectsWithName(String name) {

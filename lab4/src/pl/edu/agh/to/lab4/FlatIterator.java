@@ -26,7 +26,7 @@ public class FlatIterator implements Iterator {
 
     @Override
     public boolean hasNext() {
-        return prisoners.size() > (index+1);
+        return prisoners.size() >= (index+1);
     }
 
     @Override

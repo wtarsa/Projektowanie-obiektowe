@@ -1,3 +1,4 @@
+/*
 package pl.edu.agh.to.lab4;
 
 import java.io.ByteArrayOutputStream;
@@ -15,7 +16,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public class FinderTest {
-  /*  private ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+    private ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 
     private PrintStream originalOut;
 
@@ -25,8 +26,9 @@ public class FinderTest {
 
     private PersonDataProvider personDataProvider = new PersonDataProvider();
     private PrisonersDatabase prisonerDatabase = new PrisonersDatabase();
+    private StudentDataProvider studentDataProvider = new StudentDataProvider();
 
-    private Finder suspectFinder = new Finder(prisonerDatabase, personDataProvider);
+    private Finder suspectFinder = new Finder();
 
     @Test
     public void testDisplayingNotJailedPrisoner() {
@@ -82,5 +84,6 @@ public class FinderTest {
         if (!allPrisoners.containsKey(category))
             allPrisoners.put(category, new ArrayList<Suspect>());
         allPrisoners.get(category).add(news);
-    }*/
+    }
 }
+*/
