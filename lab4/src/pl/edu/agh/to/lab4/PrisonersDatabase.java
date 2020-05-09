@@ -32,7 +32,7 @@ public class PrisonersDatabase implements SuspectAggregate{
     }
 
     @Override
-    public FlatIterator iterator() {
+    public Iterator iterator() {
         return new FlatIterator(this);
     }
 
