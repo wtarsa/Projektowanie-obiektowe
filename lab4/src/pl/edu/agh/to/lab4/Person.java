@@ -1,6 +1,6 @@
 package pl.edu.agh.to.lab4;
 
-public class Person {
+public class Person implements Suspect{
     private final String name;
 
     private final String surname;

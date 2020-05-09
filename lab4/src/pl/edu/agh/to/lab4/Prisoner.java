@@ -2,7 +2,7 @@ package pl.edu.agh.to.lab4;
 
 import java.util.Calendar;
 
-public class Prisoner {
+public class Prisoner implements Suspect{
     private final int judgementYear;
 
     private final int sentenceDuration;
@@ -41,8 +41,8 @@ public class Prisoner {
         return surname;
     }
 
-    public String display(Prisoner prisoner) {
-        return prisoner.getName() + " " + prisoner.getSurname();
+    public String display() {
+        return this.name + " " + this.surname;
     }
 
 }

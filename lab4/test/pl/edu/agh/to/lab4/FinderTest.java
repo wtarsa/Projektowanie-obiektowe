@@ -15,15 +15,18 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public class FinderTest {
-    private ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+  /*  private ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 
     private PrintStream originalOut;
 
-    private Collection<Person> allPersons = new ArrayList<Person>();
+ //   private Collection<Suspect> allPersons = new ArrayList<>();
 
-    private Map<String, Collection<Prisoner>> allPrisoners = new HashMap<String, Collection<Prisoner>>();
+  //  private Map<String, Collection<Suspect>> allPrisoners = new HashMap<String, Collection<Suspect>>();
 
-    private Finder suspectFinder = new Finder(allPersons, allPrisoners);
+    private PersonDataProvider personDataProvider = new PersonDataProvider();
+    private PrisonersDatabase prisonerDatabase = new PrisonersDatabase();
+
+    private Finder suspectFinder = new Finder(prisonerDatabase, personDataProvider);
 
     @Test
     public void testDisplayingNotJailedPrisoner() {
@@ -77,7 +80,7 @@ public class FinderTest {
 
     private void addPrisoner(String category, Prisoner news) {
         if (!allPrisoners.containsKey(category))
-            allPrisoners.put(category, new ArrayList<Prisoner>());
+            allPrisoners.put(category, new ArrayList<Suspect>());
         allPrisoners.get(category).add(news);
-    }
+    }*/
 }

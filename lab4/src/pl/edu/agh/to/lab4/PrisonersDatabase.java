@@ -1,13 +1,10 @@
 package pl.edu.agh.to.lab4;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
-public class PrisonersDatabase {
+public class PrisonersDatabase implements SuspectAggregate{
 
-    private final Map<String, Collection<Prisoner>> prisoners = new HashMap<String, Collection<Prisoner>>();
+    private final Map<String, ArrayList<Suspect>> prisoners = new HashMap<String, ArrayList<Suspect>>();
 
     public PrisonersDatabase() {
         addPrisoner("Wiezienie krakowskie", new Prisoner("Jan", "Kowalski", "87080452357", 2005, 7));
@@ -20,7 +17,7 @@ public class PrisonersDatabase {
         addPrisoner("Wiezienie centralne", new Prisoner("Janusz", "Podejrzany", "85121212456", 2012, 1));
     }
 
-    public Map<String, Collection<Prisoner>> getAllPrisoners() {
+    public Map<String, ArrayList<Suspect>> getAllPrisoners() {
         return prisoners;
     }
 
@@ -30,8 +27,20 @@ public class PrisonersDatabase {
 
     private void addPrisoner(String category, Prisoner prisoner) {
         if (!prisoners.containsKey(category))
-            prisoners.put(category, new ArrayList<Prisoner>());
+            prisoners.put(category, new ArrayList<Suspect>());
         prisoners.get(category).add(prisoner);
     }
 
+    @Override
+    public FlatIterator iterator() {
+        return new FlatIterator(this);
+    }
+
+    public String getPrison(Prisoner prisoner){
+        Set<String> keySet = this.prisoners.keySet();
+        for(String key: keySet){
+            if(this.prisoners.get(key).equals(prisoner)) return key;
+        }
+        return null;
+    }
 }
