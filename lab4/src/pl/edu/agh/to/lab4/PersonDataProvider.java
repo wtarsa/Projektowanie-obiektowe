@@ -9,7 +9,7 @@ public class PersonDataProvider implements SuspectAggregate {
     private final Collection<Suspect> cracowCitizens = new ArrayList<>();
 
     public PersonDataProvider() {
-        cracowCitizens.add(new Person("Jan", "Kowalski", 30));
+        cracowCitizens.add(new Person("Jan", "Kowalsfki", 30));
         cracowCitizens.add(new Person("Janusz", "Krakowski", 30));
         cracowCitizens.add(new Person("Janusz", "Mlodociany", 10));
         cracowCitizens.add(new Person("Kasia", "Kosinska", 19));
@@ -24,6 +24,10 @@ public class PersonDataProvider implements SuspectAggregate {
 
     public Collection<Suspect> getAllCracowCitizens() {
         return cracowCitizens;
+    }
+
+    public void addPerson(String name, String surname, int age){
+        cracowCitizens.add(new Person(name, surname, age));
     }
 
     @Override

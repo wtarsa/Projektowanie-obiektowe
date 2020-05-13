@@ -17,6 +17,10 @@ public class StudentDataProvider implements SuspectAggregate{
         students.add(new Student("Adam", "Burkot", 20, 291157));
     }
 
+    public void addStudent(String name, String surname, int age, int index){
+        students.add(new Student(name, surname, age, index));
+    }
+
     @Override
     public Iterator<Suspect> iterator() {
         return this.students.iterator();

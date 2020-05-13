@@ -1,4 +1,3 @@
-/*
 package pl.edu.agh.to.lab4;
 
 import java.io.ByteArrayOutputStream;
@@ -9,6 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -20,10 +20,6 @@ public class FinderTest {
 
     private PrintStream originalOut;
 
- //   private Collection<Suspect> allPersons = new ArrayList<>();
-
-  //  private Map<String, Collection<Suspect>> allPrisoners = new HashMap<String, Collection<Suspect>>();
-
     private PersonDataProvider personDataProvider = new PersonDataProvider();
     private PrisonersDatabase prisonerDatabase = new PrisonersDatabase();
     private StudentDataProvider studentDataProvider = new StudentDataProvider();
@@ -32,31 +28,56 @@ public class FinderTest {
 
     @Test
     public void testDisplayingNotJailedPrisoner() {
-        addPrisoner("Wiezeienie stanowe", new Prisoner("Jan", "Kowalski", "802104543357", 2000, 1));
-        suspectFinder.displayAllSuspectsWithName("Jan");
-        assertContentIsDisplayed("Jan Kowalski");
+        prisonerDatabase.addPrisoner("Wiezeienie stanowe", new Prisoner("Jan", "Kowalski", "802104543357", 2000, 1));
+        CompositeSearchStrategy searchStrategy = new CompositeSearchStrategy();
+        searchStrategy.addStrategy(new NameSearchStrategy("Jan"));
+        ArrayList<Suspect> searchSuspects = (ArrayList<Suspect>) suspectFinder.display(searchStrategy);
+        boolean contains = false;
+        for(Suspect suspect: searchSuspects){
+            contains = contains || suspect.display().equals("Jan Kowalski");
+        }
+        assertTrue(contains);
     }
 
     @Test
     public void testDisplayingSuspectedPerson() {
-        allPersons.add(new Person("Jan", "Kowalski", 20));
-        suspectFinder.displayAllSuspectsWithName("Jan");
-        assertContentIsDisplayed("Jan Kowalski");
+        personDataProvider.addPerson("Jan", "Kowalski", 20);
+        CompositeSearchStrategy searchStrategy = new CompositeSearchStrategy();
+        searchStrategy.addStrategy(new NameSearchStrategy("Jan"));
+        ArrayList<Suspect> searchSuspects = (ArrayList<Suspect>) suspectFinder.display(searchStrategy);
+        boolean contains = false;
+        for(Suspect suspect: searchSuspects){
+            contains = contains || suspect.display().equals("Jan Kowalski");
+        }
+        assertTrue(contains);
     }
+
 
     @Test
     public void testNotDisplayingTooYoungPerson() {
-        allPersons.add(new Person("Jan", "Kowalski", 15));
-        suspectFinder.displayAllSuspectsWithName("Jan");
-        assertContentIsNotDisplayed("Jan Kowalski");
+        personDataProvider.addPerson("Jan", "Kowalski", 15);
+        CompositeSearchStrategy searchStrategy = new CompositeSearchStrategy();
+        searchStrategy.addStrategy(new NameSearchStrategy("Jan"));
+        ArrayList<Suspect> searchSuspects = (ArrayList<Suspect>) suspectFinder.display(searchStrategy);
+        boolean contains = false;
+        for(Suspect suspect: searchSuspects){
+            contains = contains || (suspect.display().equals("Jan Kowalski") && suspect.getAge() > 18);
+        }
+        assertFalse(contains);
     }
 
     @Test
     public void testNotDisplayingJailedPrisoner() {
-        allPersons.add(new Person("Jan", "Kowalski", 20));
-        addPrisoner("Wiezeienie stanowe", new Prisoner("Jan", "Kowalski2", "802104543357", 2000, 20));
-        suspectFinder.displayAllSuspectsWithName("Jan");
-        assertContentIsNotDisplayed("Jan Kowalski2");
+        personDataProvider.addPerson("Jan", "Kowalski", 20);
+        prisonerDatabase.addPrisoner("Wiezeienie stanowe", new Prisoner("Jan", "Kowalski2", "802104543357", 2000, 21));
+        CompositeSearchStrategy searchStrategy = new CompositeSearchStrategy();
+        searchStrategy.addStrategy(new NameSearchStrategy("Jan"));
+        ArrayList<Suspect> searchSuspects = (ArrayList<Suspect>) suspectFinder.display(searchStrategy);
+        boolean contains = false;
+        for(Suspect suspect: searchSuspects){
+            contains = contains || (suspect.display().equals("Jan Kowalski2") && suspect instanceof Prisoner && !((Prisoner) suspect).isSuspicious());
+        }
+        assertFalse(contains);
     }
 
     private void assertContentIsDisplayed(String expectedContent) {
@@ -71,6 +92,9 @@ public class FinderTest {
 
     @Before
     public void redirectSystemOut() {
+        suspectFinder.addDataProvider(personDataProvider);
+        suspectFinder.addDataProvider(prisonerDatabase);
+        suspectFinder.addDataProvider(studentDataProvider);
         originalOut = System.out;
         System.setOut(new PrintStream(outContent));
     }
@@ -80,10 +104,4 @@ public class FinderTest {
         System.setOut(originalOut);
     }
 
-    private void addPrisoner(String category, Prisoner news) {
-        if (!allPrisoners.containsKey(category))
-            allPrisoners.put(category, new ArrayList<Suspect>());
-        allPrisoners.get(category).add(news);
-    }
 }
-*/

@@ -7,7 +7,7 @@ public class PrisonersDatabase implements SuspectAggregate{
     private final Map<String, ArrayList<Suspect>> prisoners = new HashMap<String, ArrayList<Suspect>>();
 
     public PrisonersDatabase() {
-        addPrisoner("Wiezienie krakowskie", new Prisoner("Jan", "Kowalski", "90080452357", 2005, 7));
+        addPrisoner("Wiezienie krakowskie", new Prisoner("Jan", "Kowaglski", "90080452357", 2005, 7));
         addPrisoner("Wiezienie krakowskie", new Prisoner("Anita", "Wiercipieta", "98080452357", 2009, 3));
         addPrisoner("Wiezienie krakowskie", new Prisoner("Janusz", "Zlowieszczy", "92080445657", 2001, 10));
         addPrisoner("Wiezienie przedmiejskie", new Prisoner("Janusz", "Zamkniety", "802104543357", 2010, 5));
@@ -25,7 +25,7 @@ public class PrisonersDatabase implements SuspectAggregate{
         return prisoners.keySet();
     }
 
-    private void addPrisoner(String category, Prisoner prisoner) {
+    public void addPrisoner(String category, Prisoner prisoner) {
         if (!prisoners.containsKey(category))
             prisoners.put(category, new ArrayList<Suspect>());
         prisoners.get(category).add(prisoner);
