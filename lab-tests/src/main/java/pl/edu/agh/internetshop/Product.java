@@ -9,11 +9,12 @@ public class Product {
 	
     private final String name;
     private final BigDecimal price;
+    private final double discount; // has to be a number from the range <0.0, 1.0>
 
-    public Product(String name, BigDecimal price) {
+    public Product(String name, BigDecimal price, double discount) {
         this.name = name;
-        this.price = price;
-        this.price.setScale(PRICE_PRECISION, ROUND_STRATEGY);
+        this.discount = discount;
+        this.price = price.multiply(BigDecimal.valueOf(1-discount)).setScale(PRICE_PRECISION, ROUND_STRATEGY);
     }
 
     public String getName() {

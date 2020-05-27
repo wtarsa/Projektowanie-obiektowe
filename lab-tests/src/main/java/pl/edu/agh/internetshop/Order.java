@@ -15,6 +15,7 @@ public class Order {
     private Shipment shipment;
     private ShipmentMethod shipmentMethod;
     private PaymentMethod paymentMethod;
+    private double discount = 0.0; // has to be a number from the range <0.0, 1.0>
 
     public Order(List<Product> products) {
         this.products = Objects.requireNonNull(products, "products cannot be null");
@@ -51,7 +52,7 @@ public class Order {
         for(Product product: products) {
             summary = summary.add(product.getPrice());
         }
-        return summary;
+        return summary.multiply(BigDecimal.valueOf(1-discount)).setScale(Product.PRICE_PRECISION, Product.ROUND_STRATEGY);
     }
 
     public BigDecimal getPriceWithTaxes() {
@@ -82,5 +83,9 @@ public class Order {
 
     public void setShipment(Shipment shipment) {
         this.shipment = shipment;
+    }
+
+    public void setDiscount(double discount){
+        this.discount = discount;
     }
 }

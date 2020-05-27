@@ -16,6 +16,8 @@ import static pl.edu.agh.internetshop.util.CustomAssertions.assertBigDecimalComp
 
 public class OrderTest {
 
+	private static final String NAME = "Mr. Sparkle";
+
 	private Order getOrderWithMockedProduct() {
 		Product product = mock(Product.class);
 		return new Order(Collections.singletonList(product));
@@ -89,7 +91,7 @@ public class OrderTest {
 		Order order = new Order(Collections.singletonList(product));
 
 		// when
-		BigDecimal actualProductPrice = product.getPrice();
+		BigDecimal actualProductPrice = order.getPrice();
 
 		// then
 		assertBigDecimalCompareValue(expectedProductPrice, actualProductPrice);
@@ -109,9 +111,50 @@ public class OrderTest {
 		//when
 		BigDecimal actualOrderPrice = order.getPrice();
 		BigDecimal actualOrderPriceWithTaxes = order.getPriceWithTaxes();
+
 		//then
 		assertBigDecimalCompareValue(expectedProductPrice1.add(expectedProductPrice2), actualOrderPrice);
 		assertBigDecimalCompareValue(BigDecimal.valueOf(8*1.23), actualOrderPriceWithTaxes);
+	}
+
+	@Test
+	public void getOrderPriceWithTaxesRoundUp(){
+		//given
+		BigDecimal expectedProductPrice1 = BigDecimal.valueOf(0.01);
+		Product product1 = mock(Product.class);
+		BigDecimal expectedProductPrice2 = BigDecimal.valueOf(0.02);
+		Product product2 = mock(Product.class);
+		given(product1.getPrice()).willReturn(expectedProductPrice1);
+		given(product2.getPrice()).willReturn(expectedProductPrice2);
+		Order order = new Order(Arrays.asList(product1, product2));
+
+		//when
+		BigDecimal actualOrderPrice = order.getPrice();
+		BigDecimal actualOrderPriceWithTaxes = order.getPriceWithTaxes();
+
+		//then
+		assertBigDecimalCompareValue(BigDecimal.valueOf(0.03), actualOrderPrice);
+		assertBigDecimalCompareValue(BigDecimal.valueOf(0.04), actualOrderPriceWithTaxes);
+	}
+
+	@Test
+	public void getOrderPriceWithTaxesRoundDown(){
+		//given
+		BigDecimal expectedProductPrice1 = BigDecimal.valueOf(0.01);
+		Product product1 = mock(Product.class);
+		BigDecimal expectedProductPrice2 = BigDecimal.valueOf(0.01);
+		Product product2 = mock(Product.class);
+		given(product1.getPrice()).willReturn(expectedProductPrice1);
+		given(product2.getPrice()).willReturn(expectedProductPrice2);
+		Order order = new Order(Arrays.asList(product1, product2));
+
+		//when
+		BigDecimal actualOrderPrice = order.getPrice();
+		BigDecimal actualOrderPriceWithTaxes = order.getPriceWithTaxes();
+
+		//then
+		assertBigDecimalCompareValue(BigDecimal.valueOf(0.02), actualOrderPrice);
+		assertBigDecimalCompareValue(BigDecimal.valueOf(0.02), actualOrderPriceWithTaxes);
 	}
 
 	private Order getOrderWithCertainProductPrice(double productPriceValue) {
@@ -249,5 +292,41 @@ public class OrderTest {
 
 		// then
 		assertFalse(order.isPaid());
+	}
+
+	@Test
+	public void orderWithDiscount(){
+		BigDecimal expectedProductPrice1 = BigDecimal.valueOf(1.30);
+		Product product1 = mock(Product.class);
+		BigDecimal expectedProductPrice2 = BigDecimal.valueOf(1.02);
+		Product product2 = mock(Product.class);
+		given(product1.getPrice()).willReturn(expectedProductPrice1);
+		given(product2.getPrice()).willReturn(expectedProductPrice2);
+		Order order = new Order(Arrays.asList(product1, product2));
+		order.setDiscount(0.1);
+
+		//when
+		BigDecimal actualOrderPrice = order.getPrice();
+		BigDecimal actualOrderPriceWithTaxes = order.getPriceWithTaxes();
+
+		//then
+		assertBigDecimalCompareValue(BigDecimal.valueOf(2.09), actualOrderPrice);
+		assertBigDecimalCompareValue(BigDecimal.valueOf(2.57), actualOrderPriceWithTaxes);
+	}
+
+	@Test
+	public void orderWithDiscountAndOverPricedProducts(){
+		Product product1 = new Product(NAME, BigDecimal.valueOf(1.24), 0.13);
+		Product product2 = new Product(NAME, BigDecimal.valueOf(1.20), 0.13);
+		Order order = new Order(Arrays.asList(product1, product2));
+		order.setDiscount(0.1);
+
+		//when
+		BigDecimal actualOrderPrice = order.getPrice();
+		BigDecimal actualOrderPriceWithTaxes = order.getPriceWithTaxes();
+
+		//then
+		assertBigDecimalCompareValue(BigDecimal.valueOf(1.91), actualOrderPrice);
+		assertBigDecimalCompareValue(BigDecimal.valueOf(2.35), actualOrderPriceWithTaxes);
 	}
 }

@@ -17,9 +17,10 @@ public class ProductTest {
 	@Test
     public void testProductName() throws Exception{
         //given
-    	
+    	double discount = 0.0;
+
         // when
-        Product product = new Product(NAME, PRICE);
+        Product product = new Product(NAME, PRICE, discount);
         
         // then
         assertEquals(NAME, product.getName());
@@ -28,11 +29,37 @@ public class ProductTest {
     @Test
     public void testProductPrice() throws Exception{
         //given
-    	
+        double discount = 0.0;
+
         // when
-        Product product = new Product(NAME, PRICE);
+        Product product = new Product(NAME, PRICE, discount);
         
         // then
         assertBigDecimalCompareValue(product.getPrice(), PRICE);
     }
+
+    @Test
+    public void getProductPriceAfterDiscountWithRoundUp(){
+	    //given
+        double discount = 0.13;
+
+        //when
+        Product product = new Product(NAME, BigDecimal.valueOf(1.24), discount);
+
+        //then
+        assertBigDecimalCompareValue(product.getPrice(), BigDecimal.valueOf(1.08));
+    }
+
+    @Test
+    public void getProductPriceAfterDiscountWithRoundDown() {
+        //given
+        double discount = 0.13;
+
+        //when
+        Product product = new Product(NAME, BigDecimal.valueOf(1.20), discount);
+
+        //then
+        assertBigDecimalCompareValue(product.getPrice(), BigDecimal.valueOf(1.04));
+    }
+
 }
